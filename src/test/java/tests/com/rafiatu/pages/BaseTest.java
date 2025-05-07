@@ -29,7 +29,7 @@ public abstract class BaseTest {
          }
          **/
 
-        // options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments(new String[]{"--window-size=1920,1080"});
         options.addArguments(new String[]{"--start-maximized"});
         options.addArguments(new String[]{"--disable-extensions"});
