@@ -1,0 +1,22 @@
+services:
+  selenium-swag-labs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    volumes:
+      - .:/app
+      - m2:/root/.m2
+      - ./chrome:/opt/google/chrome
+      - modules:/usr/share/maven/ref
+    networks:
+      - swag-labs-test
+
+volumes:
+  m2:
+  chrome:
+  modules:
+
+networks:
+  swag-labs-test:
+    driver: bridge
