@@ -2,6 +2,7 @@ package com.rafiatu.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class LoginPage extends BasePage {
     private final By username = By.id("user-name");
@@ -26,7 +27,9 @@ public class LoginPage extends BasePage {
 
 
  public boolean isLoaded() {
-        return waitForElementVisible(By.className("login-box")).isDisplayed();
+        return driver.findElement(By.className("login-box")).isDisplayed();
+        // return waitForElementVisible(By.className("login-box")).isDisplayed();
+        // boolean isOnHomePage = driver.getCurrentUrl().equals("https://www.saucedemo.com/");
 }
 
     public boolean isErrorDisplayed() {

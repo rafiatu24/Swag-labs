@@ -65,7 +65,6 @@ jobs:
       
 
     - name: Send email notification
-
       if: always()
       uses: dawidd6/action-send-mail@v3
       with:

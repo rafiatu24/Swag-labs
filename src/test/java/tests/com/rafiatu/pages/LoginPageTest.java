@@ -3,7 +3,6 @@ package tests.com.rafiatu.pages;
 import com.rafiatu.pages.HomePage;
 import com.rafiatu.pages.LoginPage;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class LoginPageTest extends BaseTest {
@@ -40,7 +39,6 @@ class LoginPageTest extends BaseTest {
     loginPage.login("standard_user", "secret_sauce");
     Assertions.assertTrue(homePage.isLoaded());
 
-    homePage.logout();
-    Assertions.assertTrue(loginPage.isLoaded());
+    Assertions.assertTrue(homePage.logout());
     }
 }

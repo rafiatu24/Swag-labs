@@ -22,8 +22,17 @@ public class CheckoutPage extends BasePage {
     }
 
     public void enterCheckoutInfo(String firstName, String lastName, String postalCode) {
-        typeText(firstNameInput, firstName);
-        typeText(lastNameInput, lastName);
+       // typeText(firstNameInput, firstName);
+        // typeText(lastNameInput, lastName);
+
+        WebElement firstname = driver.findElement(firstNameInput);
+        WebElement lastname = driver.findElement(lastNameInput);
+
+        firstname.clear();
+        firstname.sendKeys(firstName);
+
+        lastname.clear();
+        lastname.sendKeys(lastName);
 
         WebElement pc = driver.findElement(postalCodeInput);
         pc.clear();
@@ -35,7 +44,8 @@ public class CheckoutPage extends BasePage {
     }
 
     public void clickFinish() {
-        clickElement(finishButton);
+        // clickElement(finishButton);
+        driver.findElement(finishButton).click();
     }
 
     public void clickCancel() {

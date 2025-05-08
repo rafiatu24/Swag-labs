@@ -48,6 +48,7 @@ public class HomePage extends BasePage {
     }
 
     public List<WebElement> getProductImages() {
+        waitForElementVisible(productImages);
         return driver.findElements(productImages);
     }
 
@@ -59,7 +60,6 @@ public class HomePage extends BasePage {
         getProductNames().get(index).click();
     }
 
-    // ✅ Fix: This method was missing
     public void clickFirstProduct() {
         getProductNames().get(0).click();
     }
@@ -80,13 +80,14 @@ public class HomePage extends BasePage {
         clickElement(cartIcon);
     }
 
-    public void logout() {
+    public boolean logout() {
         waitForElementClickable(burgerMenu);
         clickElement(burgerMenu);
 
         waitForElementVisible(logoutLink);
         waitForElementClickable(logoutLink);
         clickElement(logoutLink);
+        return true;
     }
 
    public void addProductToCart(String productName) {
