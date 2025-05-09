@@ -7,14 +7,12 @@ services:
     volumes:
       - .:/app
       - m2:/root/.m2
-      - ./chrome:/opt/google/chrome
       - modules:/usr/share/maven/ref
     networks:
       - swag-labs-test
 
 volumes:
   m2:
-  chrome:
   modules:
 
 networks:

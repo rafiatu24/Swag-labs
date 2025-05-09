@@ -40,6 +40,7 @@ import static org.junit.jupiter.api.Assertions.*;
         assertEquals(itemCountBefore + 1, itemCountAfter, "Cart item count did not update correctly.");
     }
 
+
     @Test
     void testRemoveProductFromCart() {
         LoginPage loginPage = new LoginPage(driver);

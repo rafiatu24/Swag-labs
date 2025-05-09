@@ -5,10 +5,12 @@ import com.rafiatu.pages.LoginPage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
 class HomePageTest extends BaseTest {
+
 
     @Test
     void testHomePage_shouldLoadQuickly() {
