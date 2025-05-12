@@ -7,5 +7,5 @@ https://hub.docker.com/repository/docker/rafiatu24/swag_lab_test
 
 echo " Tests completed. Check reports in ./reports"
 
-echo "Running allurre ro generate report"
+echo "Running allure to generate test report"
 mvn allure:serve
