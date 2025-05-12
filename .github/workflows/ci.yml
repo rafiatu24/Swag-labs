@@ -56,7 +56,7 @@ jobs:
           "attachments": [
             {
               "color": "${{ job.status == 'success' && '#36a64f' || '#dc3545' }}",
-              "title": "🧪 Luma Test Results - ${{ matrix.os }}",
+              "title": "🧪 Swag Lab Test Results - ${{ matrix.os }}",
               "text": "${{ job.status == 'success' && '✅ Yayyy🎉🎉 all tests passed!' || '❌ Owww😒 Some tests failed!' }}",
               "footer": "Automated Selenium Test Results"
             }
