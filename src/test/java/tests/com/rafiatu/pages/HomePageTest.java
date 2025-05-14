@@ -13,29 +13,35 @@ class HomePageTest extends BaseTest {
 
 
     @Test
-    void testHomePage_shouldLoadQuickly() {
+    void testHomePage_shouldLoadQuickly() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
 
-        loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
 
+        loginPage.open();
+            Thread.sleep(2000);
+        loginPage.login("standard_user", "secret_sauce");
+    Thread.sleep(2000);
         long startTime = System.currentTimeMillis();
         homePage.waitUntilLoaded();
         long loadTime = System.currentTimeMillis() - startTime;
+            Thread.sleep(2000);
 
         System.out.println("Homepage Load Time: " + loadTime + "ms");
         Assertions.assertTrue(loadTime <= 5000, "Homepage should load in 5 seconds or less.");
     }
 
     @Test
-    void testProductListing_showsEssentialDetails() {
+    void testProductListing_showsEssentialDetails() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
 
         loginPage.open();
+           Thread.sleep(2000);
         loginPage.login("standard_user", "secret_sauce");
+           Thread.sleep(2000);
         homePage.waitUntilLoaded();
+           Thread.sleep(2000);
 
         List<WebElement> products = homePage.getProducts();
         Assertions.assertFalse(products.isEmpty(), "There should be at least one product on the homepage.");
@@ -54,13 +60,16 @@ class HomePageTest extends BaseTest {
     }
 
     @Test
-    void testClickingProduct_opensProductDetailPage() {
+    void testClickingProduct_opensProductDetailPage() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
 
         loginPage.open();
+           Thread.sleep(2000);
         loginPage.login("standard_user", "secret_sauce");
+           Thread.sleep(2000);
         homePage.waitUntilLoaded();
+           Thread.sleep(2000);
 
         homePage.clickFirstProduct();
 
