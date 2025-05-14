@@ -7,7 +7,6 @@ services:
     volumes:
       - .:/app
       - m2:/root/.m2
-      - modules:/usr/share/maven/ref
     networks:
       - swag-labs-test
 

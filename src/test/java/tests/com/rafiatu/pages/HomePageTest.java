@@ -19,13 +19,13 @@ class HomePageTest extends BaseTest {
 
 
         loginPage.open();
-            Thread.sleep(2000);
+     //       Thread.sleep(2000);
         loginPage.login("standard_user", "secret_sauce");
-    Thread.sleep(2000);
+ //   Thread.sleep(2000);
         long startTime = System.currentTimeMillis();
         homePage.waitUntilLoaded();
         long loadTime = System.currentTimeMillis() - startTime;
-            Thread.sleep(2000);
+        //    Thread.sleep(2000);
 
         System.out.println("Homepage Load Time: " + loadTime + "ms");
         Assertions.assertTrue(loadTime <= 5000, "Homepage should load in 5 seconds or less.");
@@ -37,11 +37,11 @@ class HomePageTest extends BaseTest {
         HomePage homePage = new HomePage(driver);
 
         loginPage.open();
-           Thread.sleep(2000);
+         //  Thread.sleep(2000);
         loginPage.login("standard_user", "secret_sauce");
-           Thread.sleep(2000);
+       //    Thread.sleep(2000);
         homePage.waitUntilLoaded();
-           Thread.sleep(2000);
+       //    Thread.sleep(2000);
 
         List<WebElement> products = homePage.getProducts();
         Assertions.assertFalse(products.isEmpty(), "There should be at least one product on the homepage.");
@@ -65,11 +65,11 @@ class HomePageTest extends BaseTest {
         HomePage homePage = new HomePage(driver);
 
         loginPage.open();
-           Thread.sleep(2000);
+      //     Thread.sleep(2000);
         loginPage.login("standard_user", "secret_sauce");
-           Thread.sleep(2000);
+       //   Thread.sleep(2000);
         homePage.waitUntilLoaded();
-           Thread.sleep(2000);
+     //      Thread.sleep(2000);
 
         homePage.clickFirstProduct();
 

@@ -38,6 +38,10 @@ public abstract class BaseTest {
         options.addArguments("--disable-extensions");
         options.addArguments("--disable-gpu");
         options.addArguments("--disable-popup-blocking");
+        options.addArguments("--disable-logging");
+        options.addArguments("--log-level=3");
+        options.addArguments("--remote-allow-origins=*"); // Allow remote origins (required for newer ChromeDriver versions)
+        options.addArguments("--user-data-dir=/tmp/chrome-user-data-" + System.currentTimeMillis());
         //Google option to disable password popup
         this.driver = new ChromeDriver(options);
         this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5L));

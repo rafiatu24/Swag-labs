@@ -13,10 +13,10 @@ class LoginPageTest extends BaseTest {
         HomePage homePage = new HomePage(driver);
 
         loginPage.open();
-           Thread.sleep(2000);
+    //       Thread.sleep(2000);
 
         loginPage.login("standard_user", "secret_sauce");
-           Thread.sleep(3000);
+   //        Thread.sleep(3000);
         Assertions.assertTrue(homePage.isLoaded());
     }
 
@@ -26,10 +26,10 @@ class LoginPageTest extends BaseTest {
         HomePage homePage = new HomePage(driver);
 
         loginPage.open();
-           Thread.sleep(2000);
+     //      Thread.sleep(2000);
 
         loginPage.login("invalid_credentials", "secret_sauce");
-           Thread.sleep(3000);
+      //     Thread.sleep(3000);
 
          boolean errorDisplayed = loginPage.isErrorDisplayed();
          Assertions.assertTrue(errorDisplayed);
@@ -41,14 +41,14 @@ class LoginPageTest extends BaseTest {
     HomePage homePage = new HomePage(driver);
 
     loginPage.open();
-       Thread.sleep(2000);
+   //    Thread.sleep(2000);
 
     loginPage.login("standard_user", "secret_sauce");
-       Thread.sleep(2000);
+   //    Thread.sleep(2000);
     Assertions.assertTrue(homePage.isLoaded());
-       Thread.sleep(2000);
+     //  Thread.sleep(2000);
 
     Assertions.assertTrue(homePage.logout());
-       Thread.sleep(3000);
+     //  Thread.sleep(3000);
     }
 }

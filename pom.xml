@@ -29,11 +29,6 @@
             <version>${selenium.version}</version>
         </dependency>
 
-    
-
-
-
-
         <!-- JUnit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -79,11 +74,6 @@
   <artifactId>selenium-devtools-v122</artifactId>
   <version>4.20.0</version>
 </dependency>
-
-
-
-
-
     </dependencies>
 
     <build>
@@ -104,8 +94,14 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
+                    <argLine>
+          -Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.SimpleLog
+          -Dorg.apache.commons.logging.simplelog.log.org.apache.http.wire=ERROR
+          -Dorg.apache.commons.logging.simplelog.log.org.apache.http=ERROR
+        </argLine>
     <systemPropertyVariables>
       <allure.results.directory>target/allure-results</allure.results.directory>
+        <logging.level.org.apache.hc.client5.http.wire>OFF</logging.level.org.apache.hc.client5.http.wire>
     </systemPropertyVariables>
   </configuration>
             </plugin>
